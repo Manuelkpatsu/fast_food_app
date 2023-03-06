@@ -1,6 +1,7 @@
 import 'package:fast_food_app/screen/widget/custom_button.dart';
 import 'package:fast_food_app/screen/widget/password_input_field.dart';
 import 'package:fast_food_app/screen/widget/text_input_field.dart';
+import 'package:fast_food_app/utils/validator.dart';
 import 'package:flutter/material.dart';
 
 import 'widget/create_account.dart';
@@ -39,6 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Form(
             key: _loginFormKey,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -48,12 +50,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   controller: _emailController,
                   hintText: 'E-mail',
                   prefixIcon: const Icon(Icons.email_outlined, color: Colors.black),
+                  validator: Validator.email,
+                  inputType: TextInputType.emailAddress,
+                  inputAction: TextInputAction.next,
                 ),
                 const SizedBox(height: 24),
                 PasswordInputField(
                   controller: _passwordController,
                   hintText: 'Password',
                   prefixIcon: const Icon(Icons.lock_outline_rounded, color: Colors.black),
+                  validator: Validator.password,
+                  inputAction: TextInputAction.done,
                 ),
                 const SizedBox(height: 10),
                 ForgotPasswordButton(onTap: () {}),

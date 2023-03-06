@@ -1,3 +1,4 @@
+import 'package:fast_food_app/theme/custom_color.dart';
 import 'package:flutter/material.dart';
 
 class PasswordInputField extends StatelessWidget {
@@ -61,6 +62,10 @@ class PasswordInputField extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: BorderSide.none,
         ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius),
+          borderSide: const BorderSide(color: CustomColor.primaryColor, width: 0.5),
+        ),
         filled: true,
         fillColor: fillColor ?? Colors.white,
         hintText: hintText,
@@ -68,6 +73,12 @@ class PasswordInputField extends StatelessWidget {
           fontSize: 12,
           fontWeight: FontWeight.w500,
           color: Colors.black.withOpacity(0.3),
+          height: 1.5,
+        ),
+        errorStyle: const TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+          color: CustomColor.primaryColor,
           height: 1.5,
         ),
       ),
