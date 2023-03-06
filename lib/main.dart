@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'screen/router.dart' as router;
 
+import 'router.dart' as route;
+import 'screen/auth/welcome/welcome_screen.dart';
 import 'theme/custom_theme.dart';
 
 void main() {
@@ -24,22 +27,10 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: CustomTheme.theme,
-        home: const MyHomePage(),
+        initialRoute: WelcomeScreen.routeName,
+        navigatorKey: router.Router.navigatorKey,
+        onGenerateRoute: route.generateRoute,
       ),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Fast Food App'),
-      ),
-      body: const Center(child: Text('Welcome')),
     );
   }
 }
