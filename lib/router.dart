@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'screen/auth/login/login_screen.dart';
+import 'screen/auth/otp/otp_screen.dart';
 import 'screen/auth/sign_up/sign_up_screen.dart';
 import 'screen/auth/welcome/welcome_screen.dart';
 
@@ -12,6 +13,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const LoginScreen());
     case SignUpScreen.routeName:
       return MaterialPageRoute(builder: (_) => const SignUpScreen());
+    case OtpScreen.routeName:
+      String email = settings.arguments as String;
+      return MaterialPageRoute(builder: (_) => OtpScreen(email: email));
     default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(

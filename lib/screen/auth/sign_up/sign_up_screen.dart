@@ -1,4 +1,5 @@
 import 'package:fast_food_app/screen/auth/login/login_screen.dart';
+import 'package:fast_food_app/screen/auth/otp/otp_screen.dart';
 import 'package:fast_food_app/screen/widget/custom_button.dart';
 import 'package:fast_food_app/screen/widget/password_input_field.dart';
 import 'package:fast_food_app/screen/widget/social_login_tile.dart';
@@ -115,7 +116,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 CustomButton(
                   onPressed: () {
                     if (_signUpFormKey.currentState!.validate()) {
-                      debugPrint('sign up');
+                      router.Router.pushNamedAndRemoveUntil(
+                        OtpScreen.routeName,
+                        args: _emailController.text.trim(),
+                      );
                     }
                   },
                   widget: const Text('Create Account'),
