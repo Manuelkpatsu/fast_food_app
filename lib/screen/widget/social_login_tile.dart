@@ -18,6 +18,7 @@ class SocialLoginTile extends StatelessWidget {
         backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         minimumSize: const Size(104, 48),
+        elevation: 2,
       ),
       child: Image.asset(
         image,

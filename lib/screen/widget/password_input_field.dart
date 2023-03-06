@@ -38,6 +38,7 @@ class PasswordInputField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       onChanged: onChanged,
+      obscureText: true,
       cursorColor: Colors.black.withOpacity(0.3),
       style: const TextStyle(
         fontSize: 16,
@@ -52,15 +53,15 @@ class PasswordInputField extends StatelessWidget {
         suffixIcon: suffixIcon,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
-          borderSide: BorderSide.none,
+          borderSide: BorderSide(color: Colors.black.withOpacity(0.3), width: 0.5),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
-          borderSide: BorderSide.none,
+          borderSide: BorderSide(color: Colors.black.withOpacity(0.3), width: 0.5),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
-          borderSide: BorderSide.none,
+          borderSide: BorderSide(color: Colors.black.withOpacity(0.3), width: 0.5),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),

@@ -13,9 +13,8 @@ class CustomColor {
   static const Color greenColor = Color(0xff60ea4a);
   static const Color textFieldBorderColor = Color(0xffc4c4c4);
   static const Color addressColor = Color(0xff0f0d23);
-  static const Color scaffoldBackgroundColor = Color(0xffe5e5e5);
+  static const Color scaffoldBackgroundColor = Color(0xfffbfcff);
   static const Color widgetBackgroundColor = Color(0xfffafafa);
-  static const Color barrierColor = Color(0xfffbfcff);
   static const Color successColor = Color(0xff29bb89);
   static const Color tabActiveColor = Color(0xfff44748);
   static const Color starUnfilledColor = Color(0xff130f26);
@@ -23,4 +22,5 @@ class CustomColor {
   static const Color lightWhiteColor = Color(0xfff4f4f4);
   static const Color gradientColor = Color(0xff3e3e3e);
   static const Color darkColor = Color(0xff171725);
+  static const Color checkBoxFillColor = Color(0xff2ecc71);
 }

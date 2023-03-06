@@ -93,15 +93,15 @@ class TextInputField extends StatelessWidget {
         prefixIconConstraints: prefixIconConstraints,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
-          borderSide: BorderSide.none,
+          borderSide: BorderSide(color: Colors.black.withOpacity(0.3), width: 0.5),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
-          borderSide: BorderSide.none,
+          borderSide: BorderSide(color: Colors.black.withOpacity(0.3), width: 0.5),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
-          borderSide: BorderSide.none,
+          borderSide: BorderSide(color: Colors.black.withOpacity(0.3), width: 0.5),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),

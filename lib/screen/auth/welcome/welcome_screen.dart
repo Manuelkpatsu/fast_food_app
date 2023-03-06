@@ -1,4 +1,5 @@
 import 'package:fast_food_app/screen/auth/login/login_screen.dart';
+import 'package:fast_food_app/screen/auth/sign_up/sign_up_screen.dart';
 import 'package:fast_food_app/screen/widget/custom_button.dart';
 import 'package:fast_food_app/screen/widget/custom_outline_button.dart';
 import 'package:fast_food_app/theme/gradient.dart';
@@ -38,7 +39,9 @@ class WelcomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             CustomOutlineButton(
-              onPressed: () {},
+              onPressed: () {
+                router.Router.pushNamedAndRemoveUntil(SignUpScreen.routeName);
+              },
               widget: const Text('Sign Up'),
               fontWeight: FontWeight.w500,
             ),
