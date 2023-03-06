@@ -1,3 +1,4 @@
+import 'package:fast_food_app/screen/auth/forgot_password/forgot_password_screen.dart';
 import 'package:fast_food_app/screen/auth/sign_up/sign_up_screen.dart';
 import 'package:fast_food_app/screen/widget/custom_button.dart';
 import 'package:fast_food_app/screen/widget/password_input_field.dart';
@@ -66,7 +67,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   inputAction: TextInputAction.done,
                 ),
                 const SizedBox(height: 10),
-                ForgotPasswordButton(onTap: () {}),
+                ForgotPasswordButton(
+                  onTap: () => router.Router.pushNamed(ForgotPasswordScreen.routeName),
+                ),
                 const SizedBox(height: 20),
                 CustomButton(
                   onPressed: () {
