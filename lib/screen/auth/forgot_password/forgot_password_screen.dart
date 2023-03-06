@@ -1,8 +1,10 @@
+import 'package:fast_food_app/screen/auth/reset_password/reset_password_screen.dart';
 import 'package:fast_food_app/screen/widget/app_bar_title.dart';
 import 'package:fast_food_app/screen/widget/custom_button.dart';
 import 'package:fast_food_app/screen/widget/text_input_field.dart';
 import 'package:fast_food_app/utils/validator.dart';
 import 'package:flutter/material.dart';
+import 'package:fast_food_app/screen/router.dart' as router;
 
 import 'widget/enter_email_text.dart';
 import 'widget/forgot_password_info_text.dart';
@@ -60,7 +62,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 CustomButton(
                   onPressed: () {
                     if (_forgotPasswordFormKey.currentState!.validate()) {
-                      debugPrint('forgot password screen');
+                      router.Router.pushNamed(ResetPasswordScreen.routeName);
                     }
                   },
                   widget: const Text('Next'),
