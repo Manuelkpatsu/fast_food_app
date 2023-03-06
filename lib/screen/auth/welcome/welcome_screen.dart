@@ -1,7 +1,9 @@
+import 'package:fast_food_app/screen/auth/login/login_screen.dart';
 import 'package:fast_food_app/screen/widget/custom_button.dart';
 import 'package:fast_food_app/screen/widget/custom_outline_button.dart';
 import 'package:fast_food_app/theme/gradient.dart';
 import 'package:flutter/material.dart';
+import 'package:fast_food_app/screen/router.dart' as router;
 
 import 'widget/welcome_message_sub_title_text.dart';
 import 'widget/welcome_message_title_text.dart';
@@ -28,7 +30,9 @@ class WelcomeScreen extends StatelessWidget {
             const WelcomeMessageSubTitleText(),
             const SizedBox(height: 50),
             CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                router.Router.pushNamedAndRemoveUntil(LoginScreen.routeName);
+              },
               widget: const Text('Login'),
               fontWeight: FontWeight.w500,
             ),
