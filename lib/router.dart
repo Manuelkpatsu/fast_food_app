@@ -6,6 +6,11 @@ import 'screen/auth/otp/otp_screen.dart';
 import 'screen/auth/reset_password/reset_password_screen.dart';
 import 'screen/auth/sign_up/sign_up_screen.dart';
 import 'screen/auth/welcome/welcome_screen.dart';
+import 'screen/main/app.dart';
+import 'screen/main/cart/cart_screen.dart';
+import 'screen/main/favorite/favorite_screen.dart';
+import 'screen/main/home/home_screen.dart';
+import 'screen/main/profile/profile_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -22,6 +27,16 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const ForgotPasswordScreen());
     case ResetPasswordScreen.routeName:
       return MaterialPageRoute(builder: (_) => const ResetPasswordScreen());
+    case MainApp.routeName:
+      return MaterialPageRoute(builder: (_) => const MainApp());
+    case HomeScreen.routeName:
+      return MaterialPageRoute(builder: (_) => const HomeScreen());
+    case FavoriteScreen.routeName:
+      return MaterialPageRoute(builder: (_) => const FavoriteScreen());
+    case CartScreen.routeName:
+      return MaterialPageRoute(builder: (_) => const CartScreen());
+    case ProfileScreen.routeName:
+      return MaterialPageRoute(builder: (_) => const ProfileScreen());
     default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(

@@ -1,5 +1,6 @@
 import 'package:fast_food_app/screen/auth/forgot_password/forgot_password_screen.dart';
 import 'package:fast_food_app/screen/auth/sign_up/sign_up_screen.dart';
+import 'package:fast_food_app/screen/main/app.dart';
 import 'package:fast_food_app/screen/widget/custom_button.dart';
 import 'package:fast_food_app/screen/widget/password_input_field.dart';
 import 'package:fast_food_app/screen/widget/text_input_field.dart';
@@ -74,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 CustomButton(
                   onPressed: () {
                     if (_loginFormKey.currentState!.validate()) {
-                      debugPrint('login');
+                      router.Router.pushNamedAndRemoveUntil(MainApp.routeName);
                     }
                   },
                   widget: const Text('Login'),

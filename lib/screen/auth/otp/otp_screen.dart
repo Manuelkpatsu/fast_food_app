@@ -1,8 +1,10 @@
+import 'package:fast_food_app/screen/main/app.dart';
 import 'package:fast_food_app/screen/widget/custom_button.dart';
 import 'package:fast_food_app/screen/widget/text_input_field.dart';
 import 'package:fast_food_app/utils/validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fast_food_app/screen/router.dart' as router;
 
 import 'widget/enter_code_text.dart';
 import 'widget/otp_message_info.dart';
@@ -60,7 +62,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 CustomButton(
                   onPressed: () {
                     if (_otpFormKey.currentState!.validate()) {
-                      debugPrint('otp screen');
+                      router.Router.pushNamedAndRemoveUntil(MainApp.routeName);
                     }
                   },
                   widget: const Text('Next'),
