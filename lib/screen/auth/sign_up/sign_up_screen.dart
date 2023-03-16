@@ -10,7 +10,7 @@ import 'package:fast_food_app/screen/router.dart' as router;
 
 import 'widget/agree_terms_policy.dart';
 import 'widget/already_have_account.dart';
-import 'widget/label_text.dart';
+import '../../widget/label_text.dart';
 import 'widget/or_sign_up_with_text.dart';
 
 class SignUpScreen extends StatefulWidget {

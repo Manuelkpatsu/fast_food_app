@@ -1,6 +1,8 @@
 import 'package:fast_food_app/screen/widget/app_bar_title.dart';
 import 'package:flutter/material.dart';
+import 'package:fast_food_app/screen/router.dart' as router;
 
+import 'change_password/change_password_screen.dart';
 import 'widget/edit_profile_button.dart';
 import 'widget/general_text.dart';
 import 'widget/nav_tile.dart';
@@ -32,7 +34,9 @@ class ProfileScreen extends StatelessWidget {
             const GeneralText(),
             const SizedBox(height: 16),
             NavTile(
-              onTap: () {},
+              onTap: () {
+                router.Router.pushNamed(ChangePasswordScreen.routeName);
+              },
               icon: 'assets/images/lock.png',
               title: 'Security',
               subTitle: 'Your password account',
