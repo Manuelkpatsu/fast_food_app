@@ -23,4 +23,5 @@ class CustomColor {
   static const Color gradientColor = Color(0xff3e3e3e);
   static const Color darkColor = Color(0xff171725);
   static const Color checkBoxFillColor = Color(0xff2ecc71);
+  static const Color iconBackgroundColor = Color(0xfff8f9fc);
 }
