@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fast_food_app/screen/router.dart' as router;
 
 import 'change_password/change_password_screen.dart';
+import 'orders/orders_screen.dart';
 import 'widget/edit_profile_button.dart';
 import 'widget/general_text.dart';
 import 'widget/nav_tile.dart';
@@ -43,7 +44,9 @@ class ProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             NavTile(
-              onTap: () {},
+              onTap: () {
+                router.Router.pushNamed(OrdersScreen.routeName);
+              },
               icon: 'assets/images/paper.png',
               title: 'My Orders',
               subTitle: 'Check all your orders',

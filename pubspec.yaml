@@ -12,6 +12,8 @@ dependencies:
   google_fonts: ^4.0.3
   persistent_bottom_nav_bar: ^5.0.2
   string_validator: ^1.0.0
+  equatable: ^2.0.5
+  intl: ^0.18.0
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
@@ -25,6 +27,10 @@ flutter:
   assets:
     - assets/images/
     - assets/images/navbar/
+    - assets/images/foods/
+    - assets/images/categories/
+    - assets/images/toppings/
+    - assets/images/payments/
 
   # fonts:
   #   - family: Schyler
