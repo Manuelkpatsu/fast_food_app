@@ -12,6 +12,7 @@ import 'screen/main/favorite/favorite_screen.dart';
 import 'screen/main/home/home_screen.dart';
 import 'screen/main/profile/addresses/addresses_screen.dart';
 import 'screen/main/profile/change_password/change_password_screen.dart';
+import 'screen/main/profile/edit_profile/edit_profile_screen.dart';
 import 'screen/main/profile/orders/orders_screen.dart';
 import 'screen/main/profile/payment_method/payment_method_screen.dart';
 import 'screen/main/profile/profile_screen.dart';
@@ -49,6 +50,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const AddressesScreen());
     case PaymentMethodScreen.routeName:
       return MaterialPageRoute(builder: (_) => const PaymentMethodScreen());
+    case EditProfileScreen.routeName:
+      return MaterialPageRoute(builder: (_) => const EditProfileScreen());
     default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(

@@ -4,6 +4,7 @@ import 'package:fast_food_app/screen/router.dart' as router;
 
 import 'addresses/addresses_screen.dart';
 import 'change_password/change_password_screen.dart';
+import 'edit_profile/edit_profile_screen.dart';
 import 'orders/orders_screen.dart';
 import 'payment_method/payment_method_screen.dart';
 import 'widget/edit_profile_button.dart';
@@ -32,7 +33,11 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: 16),
             const ProfileNameText(name: 'Manuel Ahuno'),
             const SizedBox(height: 5),
-            EditProfileButton(onPressed: () {}),
+            EditProfileButton(
+              onPressed: () {
+                router.Router.pushNamed(EditProfileScreen.routeName);
+              },
+            ),
             const SizedBox(height: 30),
             const GeneralText(),
             const SizedBox(height: 16),

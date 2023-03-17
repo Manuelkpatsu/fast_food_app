@@ -42,7 +42,7 @@ class PasswordInputField extends StatelessWidget {
       cursorColor: Colors.black.withOpacity(0.3),
       style: const TextStyle(
         fontSize: 16,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w400,
         color: Colors.black,
         height: 1.5,
       ),

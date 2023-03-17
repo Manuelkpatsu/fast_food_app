@@ -73,7 +73,7 @@ class TextInputField extends StatelessWidget {
       onChanged: onChanged,
       style: const TextStyle(
         fontSize: 16,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w400,
         color: Colors.black,
         height: 1.5,
       ),

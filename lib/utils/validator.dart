@@ -8,8 +8,7 @@ class Validator {
       return 'Email is required.';
     }
 
-    String pattern =
-        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
+    String pattern = r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
     RegExp regExp = RegExp(pattern);
     if (!regExp.hasMatch(email)) {
       return 'The email you entered is invalid.';
@@ -69,6 +68,22 @@ class Validator {
 
     if (code.length != 6) {
       return "Code is invalid.";
+    }
+
+    return null;
+  };
+
+  static FormFieldValidator<String> address = (address) {
+    if (address == null || address.isEmpty) {
+      return 'Address is required.';
+    }
+
+    return null;
+  };
+
+  static FormFieldValidator<String> phoneNumber = (phoneNumber) {
+    if (phoneNumber == null || phoneNumber.isEmpty) {
+      return 'Phone number is required.';
     }
 
     return null;
