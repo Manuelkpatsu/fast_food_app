@@ -5,6 +5,7 @@ import 'package:fast_food_app/screen/router.dart' as router;
 import 'addresses/addresses_screen.dart';
 import 'change_password/change_password_screen.dart';
 import 'orders/orders_screen.dart';
+import 'payment_method/payment_method_screen.dart';
 import 'widget/edit_profile_button.dart';
 import 'widget/general_text.dart';
 import 'widget/nav_tile.dart';
@@ -63,7 +64,9 @@ class ProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             NavTile(
-              onTap: () {},
+              onTap: () {
+                router.Router.pushNamed(PaymentMethodScreen.routeName);
+              },
               icon: 'assets/images/wallet.png',
               title: 'Payment Method',
               subTitle: 'Add a payment method',
