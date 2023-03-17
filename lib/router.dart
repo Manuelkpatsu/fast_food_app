@@ -10,6 +10,7 @@ import 'screen/main/app.dart';
 import 'screen/main/cart/cart_screen.dart';
 import 'screen/main/favorite/favorite_screen.dart';
 import 'screen/main/home/home_screen.dart';
+import 'screen/main/profile/addresses/addresses_screen.dart';
 import 'screen/main/profile/change_password/change_password_screen.dart';
 import 'screen/main/profile/orders/orders_screen.dart';
 import 'screen/main/profile/profile_screen.dart';
@@ -43,6 +44,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const ChangePasswordScreen());
     case OrdersScreen.routeName:
       return MaterialPageRoute(builder: (_) => const OrdersScreen());
+    case AddressesScreen.routeName:
+      return MaterialPageRoute(builder: (_) => const AddressesScreen());
     default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(

@@ -2,6 +2,7 @@ import 'package:fast_food_app/screen/widget/app_bar_title.dart';
 import 'package:flutter/material.dart';
 import 'package:fast_food_app/screen/router.dart' as router;
 
+import 'addresses/addresses_screen.dart';
 import 'change_password/change_password_screen.dart';
 import 'orders/orders_screen.dart';
 import 'widget/edit_profile_button.dart';
@@ -53,7 +54,9 @@ class ProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             NavTile(
-              onTap: () {},
+              onTap: () {
+                router.Router.pushNamed(AddressesScreen.routeName);
+              },
               icon: 'assets/images/location.png',
               title: 'My Address',
               subTitle: 'Update or add an address',
