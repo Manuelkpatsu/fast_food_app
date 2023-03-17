@@ -1,4 +1,6 @@
+import 'package:fast_food_app/screen/auth/login/login_screen.dart';
 import 'package:fast_food_app/screen/widget/app_bar_title.dart';
+import 'package:fast_food_app/screen/widget/dialogs/logout_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:fast_food_app/screen/router.dart' as router;
 
@@ -78,7 +80,12 @@ class ProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             NavTile(
-              onTap: () {},
+              onTap: () async {
+                final shouldLogOut = await showLogOutDialog(context);
+                if (shouldLogOut) {
+                  router.Router.pushNamedAndRemoveUntil(LoginScreen.routeName);
+                }
+              },
               icon: 'assets/images/logout.png',
               title: 'Logout',
               subTitle: 'Sign out of your account',
