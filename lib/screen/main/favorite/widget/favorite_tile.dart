@@ -42,6 +42,7 @@ class FavoriteTile extends StatelessWidget {
           children: [
             Column(
               children: [
+                const SizedBox(height: 5),
                 Hero(
                   tag: food.id,
                   child: Image.asset(
