@@ -25,4 +25,6 @@ class CustomColor {
   static const Color checkBoxFillColor = Color(0xff2ecc71);
   static const Color iconBackgroundColor = Color(0xfff8f9fc);
   static const Color radioButtonColor = Color(0xff292424);
+  static const Color iconColor = Color(0xff8f8f8f);
+  static const Color disabledIconColor = Color(0xff969696);
 }
