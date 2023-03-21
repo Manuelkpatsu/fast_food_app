@@ -1,19 +1,24 @@
 import 'package:fast_food_app/models/address.dart';
 import 'package:fast_food_app/models/food.dart';
 import 'package:fast_food_app/models/payment_method.dart';
+import 'package:fast_food_app/screen/main/app.dart';
 import 'package:fast_food_app/screen/main/profile/addresses/widget/address_tile.dart';
 import 'package:fast_food_app/screen/main/profile/payment_method/widget/payment_method_tile.dart';
 import 'package:fast_food_app/screen/widget/app_bar_title.dart';
 import 'package:fast_food_app/screen/widget/custom_button.dart';
 import 'package:fast_food_app/screen/widget/selected_item_tile.dart';
 import 'package:fast_food_app/screen/widget/text_input_field.dart';
+import 'package:fast_food_app/theme/custom_color.dart';
 import 'package:flutter/material.dart';
+import 'package:fast_food_app/screen/router.dart' as router;
 
 import 'widget/address_text.dart';
+import 'widget/back_to_home_button.dart';
 import 'widget/change_address_button.dart';
 import 'widget/checkout_food_tile.dart';
 import 'widget/note_text.dart';
 import 'widget/order_detail_text.dart';
+import 'widget/payment_confirmation_text.dart';
 import 'widget/payment_method_text.dart';
 import '../../widget/selected_item_text.dart';
 import 'widget/total_amount_text.dart';
@@ -62,6 +67,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -132,13 +138,55 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             ),
             const SizedBox(height: 30),
             CustomButton(
-              onPressed: () {},
+              onPressed: openPaymentConfirmationDialog,
               widget: const Text('Pay Now'),
             ),
             const SizedBox(height: 50),
           ],
         ),
       ),
+    );
+  }
+
+  void openPaymentConfirmationDialog() {
+    showDialog(
+      context: context,
+      barrierColor: CustomColor.barrierColor.withOpacity(0.4),
+      builder: (ctx) {
+        return AlertDialog(
+          contentPadding: const EdgeInsets.all(24),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          backgroundColor: Colors.white,
+          content: IntrinsicHeight(
+            child: Column(
+              children: [
+                const SizedBox(height: 10),
+                Image.asset(
+                  'assets/images/success.png',
+                  width: 95,
+                  height: 95,
+                  fit: BoxFit.contain,
+                ),
+                const PaymentConfirmationText(),
+                const SizedBox(height: 50),
+                CustomButton(
+                  onPressed: () {
+                    router.Router.pop();
+                  },
+                  widget: const Text('Check Order Status'),
+                ),
+                const SizedBox(height: 16),
+                BackToHomeButton(
+                  onPressed: () {
+                    router.Router.pop();
+                    router.Router.pushNamedAndRemoveUntil(MainApp.routeName);
+                  },
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

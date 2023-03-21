@@ -27,4 +27,5 @@ class CustomColor {
   static const Color radioButtonColor = Color(0xff292424);
   static const Color iconColor = Color(0xff8f8f8f);
   static const Color disabledIconColor = Color(0xff969696);
+  static const Color barrierColor = Color(0xff303037);
 }
