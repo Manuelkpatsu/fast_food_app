@@ -2,10 +2,10 @@ import 'package:fast_food_app/theme/custom_color.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class CartItemAmountText extends StatelessWidget {
+class TotalAmountText extends StatelessWidget {
   final double amount;
 
-  const CartItemAmountText({Key? key, required this.amount}) : super(key: key);
+  const TotalAmountText({Key? key, required this.amount}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +15,10 @@ class CartItemAmountText extends StatelessWidget {
     return Text(
       '₵$formattedAmount',
       style: const TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.w700,
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
         height: 1.5,
-        color: CustomColor.primaryColor,
+        color: CustomColor.blackColor,
       ),
     );
   }

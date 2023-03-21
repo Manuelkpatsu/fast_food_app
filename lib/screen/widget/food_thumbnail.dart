@@ -1,15 +1,10 @@
 import 'package:fast_food_app/theme/custom_color.dart';
 import 'package:flutter/material.dart';
 
-class CartItemThumbnail extends StatelessWidget {
+class FoodThumbnail extends StatelessWidget {
   final String thumbnail;
-  final int id;
 
-  const CartItemThumbnail({
-    Key? key,
-    required this.thumbnail,
-    required this.id,
-  }) : super(key: key);
+  const FoodThumbnail({Key? key, required this.thumbnail}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +16,11 @@ class CartItemThumbnail extends StatelessWidget {
         color: CustomColor.widgetBackgroundColor,
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Hero(
-        tag: id,
-        child: Image.asset(
-          thumbnail,
-          height: 64,
-          width: 64,
-          fit: BoxFit.contain,
-        ),
+      child: Image.asset(
+        thumbnail,
+        height: 64,
+        width: 64,
+        fit: BoxFit.contain,
       ),
     );
   }

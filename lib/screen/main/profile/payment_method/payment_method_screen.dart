@@ -20,6 +20,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
     PaymentMethod(id: 2, name: 'Mayarpal', image: 'assets/images/payments/mayarpal.png'),
   ];
   int _selectedPaymentMethod = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

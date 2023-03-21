@@ -1,9 +1,11 @@
 import 'package:fast_food_app/models/category.dart';
 import 'package:fast_food_app/models/food.dart';
 import 'package:fast_food_app/models/topping.dart';
+import 'package:fast_food_app/screen/main/checkout/checkout_screen.dart';
 import 'package:fast_food_app/screen/widget/app_bar_title.dart';
 import 'package:fast_food_app/screen/widget/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:fast_food_app/screen/router.dart' as router;
 
 import 'widget/cart_tile.dart';
 
@@ -96,7 +98,12 @@ class CartScreen extends StatelessWidget {
                 },
               ),
             ),
-            CustomButton(onPressed: () {}, widget: const Text('Proceed to Checkout')),
+            CustomButton(
+              onPressed: () {
+                router.Router.pushNamed(CheckoutScreen.routeName, args: cartItems);
+              },
+              widget: const Text('Proceed to Checkout'),
+            ),
             const SizedBox(height: 30),
           ],
         ),

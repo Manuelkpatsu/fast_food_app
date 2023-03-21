@@ -39,14 +39,11 @@ class BestSellerTile extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Hero(
-              tag: food.id,
-              child: Image.asset(
-                food.image,
-                height: 95,
-                width: 95,
-                fit: BoxFit.contain,
-              ),
+            Image.asset(
+              food.image,
+              height: 95,
+              width: 95,
+              fit: BoxFit.contain,
             ),
             const SizedBox(width: 16),
             Expanded(

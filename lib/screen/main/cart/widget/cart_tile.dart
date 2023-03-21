@@ -2,9 +2,9 @@ import 'package:fast_food_app/models/food.dart';
 import 'package:fast_food_app/theme/custom_color.dart';
 import 'package:flutter/material.dart';
 
-import 'cart_item_amount_text.dart';
-import 'cart_item_name.dart';
-import 'cart_item_thumbnail.dart';
+import '../../../widget/food_amount_text.dart';
+import '../../../widget/food_name.dart';
+import '../../../widget/food_thumbnail.dart';
 import 'quantity.dart';
 
 class CartTile extends StatelessWidget {
@@ -43,7 +43,7 @@ class CartTile extends StatelessWidget {
         ),
         child: Row(
           children: [
-            CartItemThumbnail(thumbnail: food.image, id: food.id),
+            FoodThumbnail(thumbnail: food.image),
             const SizedBox(width: 16),
             Expanded(
               child: Column(
@@ -52,7 +52,7 @@ class CartTile extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CartItemName(name: food.name),
+                      FoodName(name: food.name),
                       IconButton(
                         splashRadius: 20,
                         onPressed: toggleFavorite,
@@ -72,7 +72,7 @@ class CartTile extends StatelessWidget {
                         onDecreasePressed: onDecreasePressed,
                         onAddPressed: onAddPressed,
                       ),
-                      CartItemAmountText(amount: food.price * food.quantity),
+                      FoodAmountText(amount: food.price * food.quantity),
                     ],
                   ),
                 ],

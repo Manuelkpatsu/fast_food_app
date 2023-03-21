@@ -43,13 +43,10 @@ class FavoriteTile extends StatelessWidget {
             Column(
               children: [
                 const SizedBox(height: 5),
-                Hero(
-                  tag: food.id,
-                  child: Image.asset(
-                    food.image,
-                    height: 98,
-                    width: MediaQuery.of(context).size.width,
-                  ),
+                Image.asset(
+                  food.image,
+                  height: 98,
+                  width: MediaQuery.of(context).size.width,
                 ),
                 const SizedBox(height: 5),
                 Text(

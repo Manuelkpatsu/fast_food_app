@@ -75,14 +75,11 @@ class PopularFoodTile extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 3),
-            Hero(
-              tag: food.name,
-              child: Image.asset(
-                food.image,
-                height: 107,
-                width: MediaQuery.of(context).size.width,
-                fit: BoxFit.contain,
-              ),
+            Image.asset(
+              food.image,
+              height: 107,
+              width: MediaQuery.of(context).size.width,
+              fit: BoxFit.contain,
             ),
             const SizedBox(height: 4),
             Align(
