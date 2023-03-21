@@ -1,7 +1,9 @@
 import 'package:fast_food_app/models/category.dart';
 import 'package:fast_food_app/models/food.dart';
 import 'package:fast_food_app/models/topping.dart';
+import 'package:fast_food_app/screen/main/category/category_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:fast_food_app/screen/router.dart' as router;
 
 import 'widget/best_seller_tile.dart';
 import 'widget/filter_button.dart';
@@ -25,77 +27,54 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController _searchController = TextEditingController();
-
-  @override
-  Widget build(BuildContext context) {
-    final List<Category> categories = [
-      const Category(id: 1, image: 'assets/images/categories/burger.png', name: 'Burger'),
-      const Category(id: 2, image: 'assets/images/categories/kebab.png', name: 'Kebab'),
-      const Category(id: 3, image: 'assets/images/categories/chicken.png', name: 'Chicken'),
-    ];
-    final List<Food> popularFoods = [
-      const Food(
-        id: 1,
-        image: 'assets/images/foods/monstera-burger.png',
-        name: 'Monstera Burger',
-        price: 12.0,
-        rating: 4.9,
-        description:
-            'This burger uses 100% quality beef with sliced tomatoes, pickles, vegetable, union and and extra thick cheese',
-        categories: [
-          Category(id: 1, image: 'assets/images/categories/burger', name: 'Burger'),
-        ],
-        toppings: [
-          Topping(id: 1, image: 'assets/images/toppings/mustard.png', name: 'Mustard'),
-          Topping(id: 2, image: 'assets/images/toppings/pepper-jack.png', name: 'Pepper Jack'),
-          Topping(id: 3, image: 'assets/images/toppings/mushroom.png', name: 'Mushroom'),
-          Topping(id: 4, image: 'assets/images/toppings/bacon.png', name: 'Bacon'),
-        ],
-        quantity: 50,
-      ),
-      const Food(
-        id: 2,
-        image: 'assets/images/foods/huki-burger.png',
-        name: 'Huki Burger',
-        price: 15.0,
-        rating: 4.6,
-        description:
-            'This burger uses 100% quality beef with sliced tomatoes, pickles, vegetable, union and and extra thick cheese',
-        categories: [
-          Category(id: 1, image: 'assets/images/categories/burger', name: 'Burger'),
-        ],
-        toppings: [
-          Topping(id: 1, image: 'assets/images/toppings/mustard.png', name: 'Mustard'),
-          Topping(id: 2, image: 'assets/images/toppings/pepper-jack.png', name: 'Pepper Jack'),
-          Topping(id: 3, image: 'assets/images/toppings/mushroom.png', name: 'Mushroom'),
-          Topping(id: 4, image: 'assets/images/toppings/bacon.png', name: 'Bacon'),
-        ],
-        quantity: 46,
-      ),
-      const Food(
-        id: 3,
-        image: 'assets/images/foods/bacon-burger.png',
-        name: 'Bacon Burger',
-        price: 20.0,
-        rating: 4.6,
-        description:
-            'This burger uses 100% quality beef with sliced tomatoes, pickles, vegetable, union and and extra thick cheese',
-        categories: [
-          Category(id: 1, image: 'assets/images/categories/burger', name: 'Burger'),
-        ],
-        toppings: [
-          Topping(id: 1, image: 'assets/images/toppings/mustard.png', name: 'Mustard'),
-          Topping(id: 2, image: 'assets/images/toppings/pepper-jack.png', name: 'Pepper Jack'),
-          Topping(id: 3, image: 'assets/images/toppings/mushroom.png', name: 'Mushroom'),
-          Topping(id: 4, image: 'assets/images/toppings/bacon.png', name: 'Bacon'),
-        ],
-        quantity: 60,
-      ),
-    ];
-    const Food bestSeller = Food(
+  final List<Category> categories = [
+    const Category(id: 1, image: 'assets/images/categories/burger.png', name: 'Burger'),
+    const Category(id: 2, image: 'assets/images/categories/kebab.png', name: 'Kebab'),
+    const Category(id: 3, image: 'assets/images/categories/chicken.png', name: 'Chicken'),
+  ];
+  final List<Food> popularFoods = [
+    const Food(
       id: 1,
-      image: 'assets/images/foods/vege-burger.png',
-      name: 'Vege Burger',
+      image: 'assets/images/foods/monstera-burger.png',
+      name: 'Monstera Burger',
+      price: 12.0,
+      rating: 4.9,
+      description:
+          'This burger uses 100% quality beef with sliced tomatoes, pickles, vegetable, union and and extra thick cheese',
+      categories: [
+        Category(id: 1, image: 'assets/images/categories/burger', name: 'Burger'),
+      ],
+      toppings: [
+        Topping(id: 1, image: 'assets/images/toppings/mustard.png', name: 'Mustard'),
+        Topping(id: 2, image: 'assets/images/toppings/pepper-jack.png', name: 'Pepper Jack'),
+        Topping(id: 3, image: 'assets/images/toppings/mushroom.png', name: 'Mushroom'),
+        Topping(id: 4, image: 'assets/images/toppings/bacon.png', name: 'Bacon'),
+      ],
+      quantity: 50,
+    ),
+    const Food(
+      id: 2,
+      image: 'assets/images/foods/huki-burger.png',
+      name: 'Huki Burger',
+      price: 15.0,
+      rating: 4.6,
+      description:
+          'This burger uses 100% quality beef with sliced tomatoes, pickles, vegetable, union and and extra thick cheese',
+      categories: [
+        Category(id: 1, image: 'assets/images/categories/burger', name: 'Burger'),
+      ],
+      toppings: [
+        Topping(id: 1, image: 'assets/images/toppings/mustard.png', name: 'Mustard'),
+        Topping(id: 2, image: 'assets/images/toppings/pepper-jack.png', name: 'Pepper Jack'),
+        Topping(id: 3, image: 'assets/images/toppings/mushroom.png', name: 'Mushroom'),
+        Topping(id: 4, image: 'assets/images/toppings/bacon.png', name: 'Bacon'),
+      ],
+      quantity: 46,
+    ),
+    const Food(
+      id: 3,
+      image: 'assets/images/foods/bacon-burger.png',
+      name: 'Bacon Burger',
       price: 20.0,
       rating: 4.6,
       description:
@@ -110,8 +89,36 @@ class _HomeScreenState extends State<HomeScreen> {
         Topping(id: 4, image: 'assets/images/toppings/bacon.png', name: 'Bacon'),
       ],
       quantity: 60,
-    );
+    ),
+  ];
+  final Food bestSeller = const Food(
+    id: 1,
+    image: 'assets/images/foods/vege-burger.png',
+    name: 'Vege Burger',
+    price: 20.0,
+    rating: 4.6,
+    description:
+        'This burger uses 100% quality beef with sliced tomatoes, pickles, vegetable, union and and extra thick cheese',
+    categories: [
+      Category(id: 1, image: 'assets/images/categories/burger', name: 'Burger'),
+    ],
+    toppings: [
+      Topping(id: 1, image: 'assets/images/toppings/mustard.png', name: 'Mustard'),
+      Topping(id: 2, image: 'assets/images/toppings/pepper-jack.png', name: 'Pepper Jack'),
+      Topping(id: 3, image: 'assets/images/toppings/mushroom.png', name: 'Mushroom'),
+      Topping(id: 4, image: 'assets/images/toppings/bacon.png', name: 'Bacon'),
+    ],
+    quantity: 60,
+  );
 
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 180,
@@ -150,7 +157,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const HeaderText(title: 'Food Category'),
-                  SeeAllButton(onPressed: () {}),
+                  SeeAllButton(
+                    onPressed: () => router.Router.pushNamed(CategoryScreen.routeName),
+                  ),
                 ],
               ),
             ),
@@ -160,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 24),
-                itemCount: categories.length,
+                itemCount: categories.length > 3 ? 3 : categories.length,
                 itemBuilder: (ctx, index) {
                   Category category = categories[index];
 
@@ -191,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 24),
-                itemCount: popularFoods.length,
+                itemCount: popularFoods.length > 3 ? 3 : popularFoods.length,
                 itemBuilder: (ctx, index) {
                   Food food = popularFoods[index];
 

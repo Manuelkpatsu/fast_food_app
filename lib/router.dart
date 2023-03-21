@@ -8,6 +8,7 @@ import 'screen/auth/sign_up/sign_up_screen.dart';
 import 'screen/auth/welcome/welcome_screen.dart';
 import 'screen/main/app.dart';
 import 'screen/main/cart/cart_screen.dart';
+import 'screen/main/category/category_screen.dart';
 import 'screen/main/favorite/favorite_screen.dart';
 import 'screen/main/home/home_screen.dart';
 import 'screen/main/profile/addresses/addresses_screen.dart';
@@ -52,6 +53,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const PaymentMethodScreen());
     case EditProfileScreen.routeName:
       return MaterialPageRoute(builder: (_) => const EditProfileScreen());
+    case CategoryScreen.routeName:
+      return MaterialPageRoute(builder: (_) => const CategoryScreen());
     default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(

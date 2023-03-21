@@ -10,11 +10,11 @@ class CustomTheme {
       scaffoldBackgroundColor: CustomColor.scaffoldBackgroundColor,
       primaryColor: CustomColor.primaryColor,
       canvasColor: Colors.transparent,
-      appBarTheme: const AppBarTheme(
+      appBarTheme: AppBarTheme(
         elevation: 0,
         backgroundColor: CustomColor.scaffoldBackgroundColor,
-        iconTheme: IconThemeData(color: CustomColor.titleColor),
-        systemOverlayStyle: SystemUiOverlayStyle.light,
+        iconTheme: IconThemeData(color: CustomColor.titleColor.withOpacity(0.8)),
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
       ),
       textTheme: GoogleFonts.poppinsTextTheme(),
       elevatedButtonTheme: ElevatedButtonThemeData(
