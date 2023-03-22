@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'models/food.dart';
+import 'models/order.dart';
 import 'screen/auth/forgot_password/forgot_password_screen.dart';
 import 'screen/auth/login/login_screen.dart';
 import 'screen/auth/otp/otp_screen.dart';
@@ -13,6 +14,7 @@ import 'screen/main/category/category_screen.dart';
 import 'screen/main/checkout/checkout_screen.dart';
 import 'screen/main/favorite/favorite_screen.dart';
 import 'screen/main/home/home_screen.dart';
+import 'screen/main/order_detail/order_detail_screen.dart';
 import 'screen/main/profile/addresses/addresses_screen.dart';
 import 'screen/main/profile/change_password/change_password_screen.dart';
 import 'screen/main/profile/edit_profile/edit_profile_screen.dart';
@@ -60,6 +62,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case CheckoutScreen.routeName:
       List<Food> argument = settings.arguments as List<Food>;
       return MaterialPageRoute(builder: (_) => CheckoutScreen(argument: argument));
+    case OrderDetailScreen.routeName:
+      Order argument = settings.arguments as Order;
+      return MaterialPageRoute(builder: (_) => OrderDetailScreen(argument: argument));
     default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(

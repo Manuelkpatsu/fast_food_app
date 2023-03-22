@@ -77,6 +77,7 @@ class _OrdersScreenState extends State<OrdersScreen>
         phoneNumber: '(62) 123-456',
         streetAddress: 'Street: 18 Sun City, Cibadak',
       ),
+      note: 'Please add some sauce on that burger',
     ),
   ];
   final List<Order> _ongoingOrders = [];

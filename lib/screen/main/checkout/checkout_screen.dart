@@ -1,7 +1,9 @@
 import 'package:fast_food_app/models/address.dart';
 import 'package:fast_food_app/models/food.dart';
+import 'package:fast_food_app/models/order.dart';
 import 'package:fast_food_app/models/payment_method.dart';
 import 'package:fast_food_app/screen/main/app.dart';
+import 'package:fast_food_app/screen/main/order_detail/order_detail_screen.dart';
 import 'package:fast_food_app/screen/main/profile/addresses/widget/address_tile.dart';
 import 'package:fast_food_app/screen/main/profile/payment_method/widget/payment_method_tile.dart';
 import 'package:fast_food_app/screen/widget/app_bar_title.dart';
@@ -21,8 +23,8 @@ import 'widget/order_detail_text.dart';
 import 'widget/payment_confirmation_text.dart';
 import 'widget/payment_method_text.dart';
 import '../../widget/selected_item_text.dart';
-import 'widget/total_amount_text.dart';
-import 'widget/total_text.dart';
+import '../../widget/total_amount_text.dart';
+import '../../widget/total_text.dart';
 
 class CheckoutScreen extends StatefulWidget {
   static const routeName = '/checkout';
@@ -172,6 +174,19 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 CustomButton(
                   onPressed: () {
                     router.Router.pop();
+                    router.Router.pushNamed(
+                      OrderDetailScreen.routeName,
+                      args: Order(
+                        id: 1,
+                        foods: widget.argument,
+                        orderStatus: OrderStatus.received,
+                        paymentMethod: _paymentMethods
+                            .where((paymentMethod) => paymentMethod.id == _selectedPaymentMethod)
+                            .first,
+                        address: _address,
+                        note: _noteController.text.trim(),
+                      ),
+                    );
                   },
                   widget: const Text('Check Order Status'),
                 ),

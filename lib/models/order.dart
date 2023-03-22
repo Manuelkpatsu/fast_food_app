@@ -12,7 +12,7 @@ class Order extends Equatable {
   final OrderStatus orderStatus;
   final PaymentMethod paymentMethod;
   final Address address;
-  final String? note;
+  final String note;
 
   const Order({
     required this.id,
@@ -20,7 +20,7 @@ class Order extends Equatable {
     required this.orderStatus,
     required this.paymentMethod,
     required this.address,
-    this.note,
+    required this.note,
   });
 
   @override

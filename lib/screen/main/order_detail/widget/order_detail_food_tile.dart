@@ -1,18 +1,18 @@
 import 'package:fast_food_app/models/food.dart';
+import 'package:fast_food_app/screen/widget/category_name_text.dart';
 import 'package:fast_food_app/screen/widget/food_amount_text.dart';
 import 'package:fast_food_app/screen/widget/food_name.dart';
 import 'package:fast_food_app/screen/widget/food_thumbnail.dart';
-import 'package:fast_food_app/theme/custom_color.dart';
 import 'package:flutter/material.dart';
 
-import '../../../widget/category_name_text.dart';
+import 'quantity_text.dart';
 
-class CheckoutFoodTile extends StatelessWidget {
+class OrderDetailFoodTile extends StatelessWidget {
   final Food food;
   final VoidCallback? onPressed;
   final VoidCallback? toggleFavorite;
 
-  const CheckoutFoodTile({
+  const OrderDetailFoodTile({
     Key? key,
     required this.food,
     required this.onPressed,
@@ -51,15 +51,7 @@ class CheckoutFoodTile extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         FoodName(name: food.name),
-                        IconButton(
-                          splashRadius: 20,
-                          onPressed: toggleFavorite,
-                          icon: const Icon(
-                            Icons.favorite_border_rounded,
-                            size: 20,
-                            color: CustomColor.iconColor,
-                          ),
-                        ),
+                        QuantityText(quantity: food.quantity),
                       ],
                     ),
                     Row(
