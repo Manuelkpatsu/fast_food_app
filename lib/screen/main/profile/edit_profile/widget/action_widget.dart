@@ -1,3 +1,4 @@
+import 'package:fast_food_app/theme/custom_color.dart';
 import 'package:flutter/material.dart';
 
 class ActionWidget extends StatelessWidget {
@@ -27,8 +28,8 @@ class ActionWidget extends StatelessWidget {
       ),
       trailing: Icon(
         trailingIcon,
-        color: Colors.black,
-        size: 20,
+        color: CustomColor.greyColor,
+        size: 16,
       ),
       title: Text(
         title,

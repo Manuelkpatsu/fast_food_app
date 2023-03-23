@@ -37,14 +37,14 @@ class ImagePickerModal extends StatelessWidget {
           trailingIcon: Icons.arrow_forward_ios_rounded,
           onPressed: onCameraTap,
         ),
-        const Divider(color: CustomColor.greyColor, thickness: 1, height: 0),
+        const Divider(color: CustomColor.greyColor, thickness: 0.5, height: 0),
         ActionWidget(
           leadingIcon: Icons.collections_outlined,
           title: "Choose from gallery",
           trailingIcon: Icons.arrow_forward_ios_rounded,
           onPressed: onGalleryTap,
         ),
-        const Divider(color: CustomColor.greyColor, thickness: 1, height: 0),
+        const Divider(color: CustomColor.greyColor, thickness: 0.5, height: 0),
         const SizedBox(height: 30),
       ],
     );
