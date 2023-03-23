@@ -1,6 +1,7 @@
 import 'package:fast_food_app/models/order.dart';
 import 'package:fast_food_app/screen/main/app.dart';
 import 'package:fast_food_app/screen/main/cancel_order/cancel_order_screen.dart';
+import 'package:fast_food_app/screen/main/order_status/order_status_screen.dart';
 import 'package:fast_food_app/screen/main/profile/addresses/widget/address_tile.dart';
 import 'package:fast_food_app/screen/main/profile/payment_method/widget/payment_method_tile.dart';
 import 'package:fast_food_app/screen/widget/app_bar_title.dart';
@@ -62,7 +63,12 @@ class OrderDetailScreen extends StatelessWidget {
             const OrderStatusText(),
             const SizedBox(height: 12),
             OrderStatusInfo(
-              onTap: () {},
+              onTap: () {
+                router.Router.pushNamed(
+                  OrderStatusScreen.routeName,
+                  args: argument.address,
+                );
+              },
               orderStatus: argument.orderStatus,
               dateTime: DateTime(2023, 03, 22, 09, 50),
             ),
