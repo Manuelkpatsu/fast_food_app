@@ -1,4 +1,6 @@
 import 'package:fast_food_app/models/order.dart';
+import 'package:fast_food_app/screen/main/app.dart';
+import 'package:fast_food_app/screen/main/cancel_order/cancel_order_screen.dart';
 import 'package:fast_food_app/screen/main/profile/addresses/widget/address_tile.dart';
 import 'package:fast_food_app/screen/main/profile/payment_method/widget/payment_method_tile.dart';
 import 'package:fast_food_app/screen/widget/app_bar_title.dart';
@@ -117,7 +119,13 @@ class OrderDetailScreen extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                if (argument.orderStatus == OrderStatus.completed) {
+                  router.Router.pushNamedAndRemoveUntil(MainApp.routeName);
+                } else {
+                  router.Router.pushNamed(CancelOrderScreen.routeName);
+                }
+              },
               widget: Text(buttonText()),
             ),
             const SizedBox(height: 16),

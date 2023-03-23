@@ -9,6 +9,7 @@ import 'screen/auth/reset_password/reset_password_screen.dart';
 import 'screen/auth/sign_up/sign_up_screen.dart';
 import 'screen/auth/welcome/welcome_screen.dart';
 import 'screen/main/app.dart';
+import 'screen/main/cancel_order/cancel_order_screen.dart';
 import 'screen/main/cart/cart_screen.dart';
 import 'screen/main/category/category_screen.dart';
 import 'screen/main/checkout/checkout_screen.dart';
@@ -65,6 +66,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case OrderDetailScreen.routeName:
       Order argument = settings.arguments as Order;
       return MaterialPageRoute(builder: (_) => OrderDetailScreen(argument: argument));
+    case CancelOrderScreen.routeName:
+      return MaterialPageRoute(builder: (_) => const CancelOrderScreen());
     default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(
