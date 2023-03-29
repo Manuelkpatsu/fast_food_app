@@ -91,7 +91,6 @@ class CartScreen extends StatelessWidget {
                       food: food,
                       onAddPressed: () {},
                       onDecreasePressed: () {},
-                      onPressed: () {},
                       toggleFavorite: () {},
                     ),
                   );

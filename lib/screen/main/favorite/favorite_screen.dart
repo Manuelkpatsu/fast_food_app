@@ -1,8 +1,10 @@
 import 'package:fast_food_app/models/category.dart';
 import 'package:fast_food_app/models/food.dart';
 import 'package:fast_food_app/models/topping.dart';
+import 'package:fast_food_app/screen/main/food_detail/food_detail_screen.dart';
 import 'package:fast_food_app/screen/widget/app_bar_title.dart';
 import 'package:flutter/material.dart';
+import 'package:fast_food_app/screen/router.dart' as router;
 
 import 'widget/favorite_tile.dart';
 
@@ -116,7 +118,9 @@ class FavoriteScreen extends StatelessWidget {
           Food food = favorites[index];
 
           return FavoriteTile(
-            onPressed: () {},
+            onPressed: () {
+              router.Router.pushNamed(FoodDetailScreen.routeName, args: food);
+            },
             food: food,
             toggleFavorite: () {},
           );

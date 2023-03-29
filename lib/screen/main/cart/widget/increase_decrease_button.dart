@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 class IncreaseDecreaseButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final IconData icon;
+  final double iconSpacing;
 
   const IncreaseDecreaseButton({
     Key? key,
     required this.onPressed,
     required this.icon,
+    this.iconSpacing = 18,
   }) : super(key: key);
 
   @override
@@ -18,8 +20,8 @@ class IncreaseDecreaseButton extends StatelessWidget {
         child: InkWell(
           onTap: () {},
           child: SizedBox(
-            width: 18,
-            height: 18,
+            width: iconSpacing,
+            height: iconSpacing,
             child: Icon(
               icon,
               size: 14,

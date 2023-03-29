@@ -8,12 +8,16 @@ class Quantity extends StatelessWidget {
   final int quantity;
   final VoidCallback? onDecreasePressed;
   final VoidCallback? onAddPressed;
+  final double space;
+  final double iconSpacing;
 
   const Quantity({
     Key? key,
     required this.quantity,
     required this.onDecreasePressed,
     required this.onAddPressed,
+    this.space = 5.0,
+    this.iconSpacing = 18,
   }) : super(key: key);
 
   @override
@@ -27,11 +31,19 @@ class Quantity extends StatelessWidget {
       ),
       child: Row(
         children: [
-          IncreaseDecreaseButton(onPressed: onDecreasePressed, icon: Icons.remove),
-          const SizedBox(width: 5),
+          IncreaseDecreaseButton(
+            onPressed: onDecreasePressed,
+            icon: Icons.remove,
+            iconSpacing: iconSpacing,
+          ),
+          SizedBox(width: space),
           QuantityText(quantity: quantity),
-          const SizedBox(width: 5),
-          IncreaseDecreaseButton(onPressed: onAddPressed, icon: Icons.add),
+          SizedBox(width: space),
+          IncreaseDecreaseButton(
+            onPressed: onAddPressed,
+            icon: Icons.add,
+            iconSpacing: iconSpacing,
+          ),
         ],
       ),
     );

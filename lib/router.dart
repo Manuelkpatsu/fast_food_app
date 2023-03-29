@@ -15,6 +15,7 @@ import 'screen/main/cart/cart_screen.dart';
 import 'screen/main/category/category_screen.dart';
 import 'screen/main/checkout/checkout_screen.dart';
 import 'screen/main/favorite/favorite_screen.dart';
+import 'screen/main/food_detail/food_detail_screen.dart';
 import 'screen/main/home/home_screen.dart';
 import 'screen/main/order_detail/order_detail_screen.dart';
 import 'screen/main/order_status/order_status_screen.dart';
@@ -73,6 +74,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case OrderStatusScreen.routeName:
       Address argument = settings.arguments as Address;
       return MaterialPageRoute(builder: (_) => OrderStatusScreen(argument: argument));
+    case FoodDetailScreen.routeName:
+      Food argument = settings.arguments as Food;
+      return MaterialPageRoute(builder: (_) => FoodDetailScreen(argument: argument));
     default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(

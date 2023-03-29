@@ -2,6 +2,7 @@ import 'package:fast_food_app/models/category.dart';
 import 'package:fast_food_app/models/food.dart';
 import 'package:fast_food_app/models/topping.dart';
 import 'package:fast_food_app/screen/main/category/category_screen.dart';
+import 'package:fast_food_app/screen/main/food_detail/food_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fast_food_app/screen/router.dart' as router;
 
@@ -40,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
       price: 12.0,
       rating: 4.9,
       description:
-          'This burger uses 100% quality beef with sliced tomatoes, pickles, vegetable, union and and extra thick cheese',
+          'This burger uses 100% quality beef with sliced tomatoes, pickles, vegetable, union and and extra thick cheese. It tastes really great and it is the best in town.',
       categories: [
         Category(id: 1, image: 'assets/images/categories/burger', name: 'Burger'),
       ],
@@ -59,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
       price: 15.0,
       rating: 4.6,
       description:
-          'This burger uses 100% quality beef with sliced tomatoes, pickles, vegetable, union and and extra thick cheese',
+          'This burger uses 100% quality beef with sliced tomatoes, pickles, vegetable, union and and extra thick cheese. It tastes really great and it is the best in town.',
       categories: [
         Category(id: 1, image: 'assets/images/categories/burger', name: 'Burger'),
       ],
@@ -78,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
       price: 20.0,
       rating: 4.6,
       description:
-          'This burger uses 100% quality beef with sliced tomatoes, pickles, vegetable, union and and extra thick cheese',
+          'This burger uses 100% quality beef with sliced tomatoes, pickles, vegetable, union and and extra thick cheese. It tastes really great and it is the best in town.',
       categories: [
         Category(id: 1, image: 'assets/images/categories/burger', name: 'Burger'),
       ],
@@ -98,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
     price: 20.0,
     rating: 4.6,
     description:
-        'This burger uses 100% quality beef with sliced tomatoes, pickles, vegetable, union and and extra thick cheese',
+        'This burger uses 100% quality beef with sliced tomatoes, pickles, vegetable, union and and extra thick cheese. It tastes really great and it is the best in town.',
     categories: [
       Category(id: 1, image: 'assets/images/categories/burger', name: 'Burger'),
     ],
@@ -208,7 +209,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: EdgeInsets.only(right: categories.length - 1 == index ? 0 : 16),
                     child: PopularFoodTile(
                       food: food,
-                      onTap: () {},
+                      onTap: () {
+                        router.Router.pushNamed(FoodDetailScreen.routeName, args: food);
+                      },
                       toggleFavorite: () {},
                     ),
                   );
@@ -224,7 +227,9 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: BestSellerTile(
-                onTap: () {},
+                onTap: () {
+                  router.Router.pushNamed(FoodDetailScreen.routeName, args: bestSeller);
+                },
                 toggleFavorite: () {},
                 food: bestSeller,
               ),
