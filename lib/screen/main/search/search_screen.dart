@@ -347,12 +347,8 @@ class SearchScreen extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    List<Food> matchQuery = [];
-    for (var food in searchTerms) {
-      if (food.name.toLowerCase().contains(query.toLowerCase())) {
-        matchQuery.add(food);
-      }
-    }
+    List<Food> matchQuery =
+        searchTerms.where((food) => food.name.toLowerCase().contains(query.toLowerCase())).toList();
 
     return matchQuery.isEmpty
         ? const Center(
@@ -366,10 +362,51 @@ class SearchScreen extends SearchDelegate {
               ),
             ),
           )
+        : GridView.builder(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+            itemCount: matchQuery.length,
+            itemBuilder: (context, int index) {
+              Food food = matchQuery[index];
+
+              return FoodTile(
+                food: food,
+                onTap: () {
+                  router.Router.pushNamed(FoodDetailScreen.routeName, args: food);
+                },
+                toggleFavorite: () {},
+              );
+            },
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 16,
+              crossAxisSpacing: 16,
+              mainAxisExtent: 230,
+            ),
+          );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    List<Food> matchQuery =
+        searchTerms.where((food) => food.name.toLowerCase().contains(query.toLowerCase())).toList();
+
+    return matchQuery.isEmpty && query.isNotEmpty
+        ? const Center(
+            child: Text(
+              'No results found',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: CustomColor.blackColor,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          )
         : Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 20),
-              ResultText(query: query),
+              query.isEmpty ? const SizedBox.shrink() : const SizedBox(height: 20),
+              query.isEmpty ? const SizedBox.shrink() : ResultText(query: query),
               Expanded(
                 child: GridView.builder(
                   padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
@@ -395,37 +432,5 @@ class SearchScreen extends SearchDelegate {
               ),
             ],
           );
-  }
-
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    List<Food> matchQuery = [];
-    for (var food in searchTerms) {
-      if (food.name.toLowerCase().contains(query.toLowerCase())) {
-        matchQuery.add(food);
-      }
-    }
-
-    return GridView.builder(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-      itemCount: matchQuery.length,
-      itemBuilder: (context, int index) {
-        Food food = matchQuery[index];
-
-        return FoodTile(
-          food: food,
-          onTap: () {
-            router.Router.pushNamed(FoodDetailScreen.routeName, args: food);
-          },
-          toggleFavorite: () {},
-        );
-      },
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        mainAxisSpacing: 16,
-        crossAxisSpacing: 16,
-        mainAxisExtent: 230,
-      ),
-    );
   }
 }
