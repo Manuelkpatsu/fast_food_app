@@ -3,6 +3,7 @@ import 'package:fast_food_app/models/food.dart';
 import 'package:fast_food_app/models/topping.dart';
 import 'package:fast_food_app/screen/main/category/category_screen.dart';
 import 'package:fast_food_app/screen/main/food_detail/food_detail_screen.dart';
+import 'package:fast_food_app/screen/main/search/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fast_food_app/screen/router.dart' as router;
 
@@ -12,7 +13,7 @@ import 'widget/header_text.dart';
 import 'widget/home_category_tile.dart';
 import 'widget/logo.dart';
 import 'widget/message_text.dart';
-import 'widget/popular_food_tile.dart';
+import 'widget/food_tile.dart';
 import 'widget/search_text_field.dart';
 import 'widget/see_all_button.dart';
 import 'widget/hello_text.dart';
@@ -135,9 +136,8 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 SearchTextField(
                   controller: _searchController,
-                  onTap: () {},
+                  onTap: () => _navigateToSearchScreen(),
                   onChanged: (value) {},
-                  enabled: false,
                   readOnly: true,
                 ),
                 const SizedBox(width: 16),
@@ -191,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const HeaderText(title: 'Popular Food'),
-                  SeeAllButton(onPressed: () {}),
+                  SeeAllButton(onPressed: () => _navigateToSearchScreen()),
                 ],
               ),
             ),
@@ -207,7 +207,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                   return Padding(
                     padding: EdgeInsets.only(right: categories.length - 1 == index ? 0 : 16),
-                    child: PopularFoodTile(
+                    child: FoodTile(
                       food: food,
                       onTap: () {
                         router.Router.pushNamed(FoodDetailScreen.routeName, args: food);
@@ -238,6 +238,14 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  void _navigateToSearchScreen() {
+    showSearch(
+      context: context,
+      delegate: SearchScreen(),
+      useRootNavigator: true,
     );
   }
 }

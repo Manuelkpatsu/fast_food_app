@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 class SearchTextField extends StatelessWidget {
   final TextEditingController controller;
   final void Function(String)? onChanged;
-  final bool? enabled;
   final bool readOnly;
   final void Function()? onTap;
 
@@ -13,7 +12,6 @@ class SearchTextField extends StatelessWidget {
     Key? key,
     required this.controller,
     required this.onChanged,
-    required this.enabled,
     required this.readOnly,
     required this.onTap,
   }) : super(key: key);
@@ -24,9 +22,9 @@ class SearchTextField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         onTap: onTap,
-        enabled: enabled,
         readOnly: readOnly,
         onChanged: onChanged,
+        autofocus: false,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.zero,
           isDense: true,

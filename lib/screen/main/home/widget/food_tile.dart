@@ -3,12 +3,12 @@ import 'package:fast_food_app/theme/custom_color.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class PopularFoodTile extends StatelessWidget {
+class FoodTile extends StatelessWidget {
   final Food food;
   final VoidCallback? onTap;
   final VoidCallback? toggleFavorite;
 
-  const PopularFoodTile({
+  const FoodTile({
     Key? key,
     required this.food,
     required this.onTap,
