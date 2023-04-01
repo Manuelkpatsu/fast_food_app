@@ -120,7 +120,7 @@ class FoodDetailScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: CustomButton(
               onPressed: () {},
-              widget: const Text('Order Now'),
+              widget: const Text('Add To Cart'),
             ),
           ),
           const SizedBox(height: 40),
