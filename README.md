@@ -114,6 +114,9 @@ A [@nuel_nartey](https://twitter.com/nuel_nartey) Flutter Showcase project.
         <td>
             <img src="https://github.com/Manuelkpatsu/fast_food_app/blob/main/screenshots/28.png" />
         </td>
+        <td>
+            <img src="https://github.com/Manuelkpatsu/fast_food_app/blob/main/screenshots/29.png" />
+        </td>
     </tr>
 </table>
 
